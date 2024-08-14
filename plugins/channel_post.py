@@ -40,16 +40,16 @@ async def channel_post(client: Client, message: Message):
     try:
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="path/to/banner.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            photo="medialeakd.png",
+            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
     except FloodWait as e:
         await asyncio.sleep(e.value)
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="path/to/banner.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            photo="medialeakd.png",
+            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
     except Exception as e:
@@ -79,7 +79,7 @@ async def new_post(client: Client, message: Message):
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="path/to/banner.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
     except FloodWait as e:
@@ -87,7 +87,7 @@ async def new_post(client: Client, message: Message):
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="path/to/banner.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
     except Exception:
