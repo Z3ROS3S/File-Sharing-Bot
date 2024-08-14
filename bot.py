@@ -1,3 +1,5 @@
+#(©)Codexbotz
+
 from aiohttp import web
 from plugins import web_server
 
@@ -51,7 +53,7 @@ class Bot(Client):
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
-        self.LOGGER(__name__).warning(f"Bot Running..!\n\nCreated by \n")
+        self.LOGGER(__name__).info(f"Bot Running..!\n\nCreated by \n")
         self.username = usr_bot_me.username
         #web-response
         app = web.AppRunner(await web_server())
