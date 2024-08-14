@@ -15,9 +15,10 @@ async def channel_post(client: Client, message: Message):
         await asyncio.sleep(e.value)
         post_message = await message.copy(chat_id=client.db_channel.id, disable_notification=True)
     except Exception as e:
-        print(e)
+        print(f"Error copying message to CHANNEL_ID: {e}")
         await reply_text.edit_text("Something went Wrong..!")
         return
+
     converted_id = post_message.id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
     base64_string = await encode(string)
@@ -33,15 +34,15 @@ async def channel_post(client: Client, message: Message):
         except FloodWait as e:
             await asyncio.sleep(e.value)
             await post_message.edit_reply_markup(reply_markup)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Error editing reply markup in CHANNEL_ID: {e}")
 
     # Post the banner and link in CHANNEL_ID_2
     try:
         print(f"Sending photo to CHANNEL_ID_2: {CHANNEL_ID_2}")
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="medialeakd.png",
+            photo="path/to/banner.png",
             caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
@@ -50,7 +51,7 @@ async def channel_post(client: Client, message: Message):
         await asyncio.sleep(e.value)
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="medialeakd.png",
+            photo="path/to/banner.png",
             caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
@@ -73,15 +74,15 @@ async def new_post(client: Client, message: Message):
     except FloodWait as e:
         await asyncio.sleep(e.value)
         await message.edit_reply_markup(reply_markup)
-    except Exception:
-        pass
+    except Exception as e:
+        print(f"Error editing reply markup in CHANNEL_ID: {e}")
 
     # Post the banner and link in CHANNEL_ID_2
     try:
         print(f"Sending photo to CHANNEL_ID_2: {CHANNEL_ID_2}")
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="medialeakd.png",
+            photo="path/to/banner.png",
             caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
@@ -90,7 +91,7 @@ async def new_post(client: Client, message: Message):
         await asyncio.sleep(e.value)
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="medialeakd.png",
+            photo="path/to/banner.png",
             caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
