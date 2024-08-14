@@ -38,22 +38,24 @@ async def channel_post(client: Client, message: Message):
 
     # Post the banner and link in CHANNEL_ID_2
     try:
+        print(f"Sending photo to CHANNEL_ID_2: {CHANNEL_ID_2}")
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="medialeakd.png",
-            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
+        print("Photo sent successfully to CHANNEL_ID_2")
     except FloodWait as e:
         await asyncio.sleep(e.value)
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="medialeakd.png",
-            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
     except Exception as e:
-        print(e)
+        print(f"Failed to send photo to CHANNEL_ID_2: {e}")
 
 @Bot.on_message(filters.channel & filters.incoming & filters.chat(CHANNEL_ID))
 async def new_post(client: Client, message: Message):
@@ -76,20 +78,21 @@ async def new_post(client: Client, message: Message):
 
     # Post the banner and link in CHANNEL_ID_2
     try:
+        print(f"Sending photo to CHANNEL_ID_2: {CHANNEL_ID_2}")
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="path/to/banner.png",
-            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
+        print("Photo sent successfully to CHANNEL_ID_2")
     except FloodWait as e:
         await asyncio.sleep(e.value)
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="path/to/banner.png",
-            caption="Media Conten Copet\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
-    except Exception:
-        pass
-
+    except Exception as e:
+        print(f"Failed to send photo to CHANNEL_ID_2: {e}")
