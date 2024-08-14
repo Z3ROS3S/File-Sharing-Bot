@@ -8,6 +8,7 @@ APP_ID = int(os.environ.get("APP_ID", ""))
 API_HASH = os.environ.get("API_HASH", "")
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 CHANNEL_ID_2 = int(os.environ.get("CHANNEL_ID_2", ""))
+
 OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 PORT = os.environ.get("PORT", "8080")
 DB_URI = os.environ.get("DATABASE_URL", "")
@@ -27,7 +28,7 @@ CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "❌ INI BOT CUMAN NAMPILIN DONASI , DONASI KE @mudamudiratepbot"
+USER_REPLY_TEXT = "❌ INI BOT CUMAN NAMPILIN DONASI , DONASI KE @https://t.me/mudamudiratepbot"
 
 ADMINS.append(OWNER_ID)
 ADMINS.append(1250450587)
