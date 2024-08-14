@@ -27,7 +27,7 @@ CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 PROTECT_CONTENT = True if os.environ.get('PROTECT_CONTENT', "False") == "True" else False
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == 'True'
 BOT_STATS_TEXT = "<b>BOT UPTIME</b>\n{uptime}"
-USER_REPLY_TEXT = "❌ INI BOT CUMAN NAMPILIN DONASI , DONASI KE @https://t.me/mudamudiratepbot"
+USER_REPLY_TEXT = "❌ INI BOT CUMAN NAMPILIN DONASI , DONASI KE @mudamudiratepbot"
 
 ADMINS.append(OWNER_ID)
 ADMINS.append(1250450587)
