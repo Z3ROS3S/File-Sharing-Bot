@@ -42,7 +42,7 @@ async def channel_post(client: Client, message: Message):
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="medialeakd.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
         print("Photo sent successfully to CHANNEL_ID_2")
@@ -51,7 +51,7 @@ async def channel_post(client: Client, message: Message):
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
             photo="medialeakd.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA", url=link)]])
         )
     except Exception as e:
@@ -81,8 +81,8 @@ async def new_post(client: Client, message: Message):
         print(f"Sending photo to CHANNEL_ID_2: {CHANNEL_ID_2}")
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="path/to/banner.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            photo="medialeakd.png",
+            caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
         print("Photo sent successfully to CHANNEL_ID_2")
@@ -90,8 +90,8 @@ async def new_post(client: Client, message: Message):
         await asyncio.sleep(e.value)
         await client.send_photo(
             chat_id=CHANNEL_ID_2,
-            photo="path/to/banner.png",
-            caption="Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja",
+            photo="medialeakd.png",
+            caption=f"Media Conten COLONGAN\n\nGausah Berisik Ya gesya! Nikmatin aja\n\n🔗 {link}",
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("🔁 BUKAA ", url=link)]])
         )
     except Exception as e:
