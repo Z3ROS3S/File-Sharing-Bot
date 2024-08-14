@@ -13,17 +13,17 @@ from helper_func import encode
 async def channel_post(client: Client, message: Message):
     reply_text = await message.reply_text("Please Wait...!", quote=True)
     try:
-        # Replace the content with a specific file and text
-        post_message = await client.send_photo(
+        # Only generate the link without copying the media
+        post_message = await client.send_message(
             chat_id=client.db_channel.id,
-            photo="medialeakd.png",
+            text="New content available!",
             disable_notification=True
         )
     except FloodWait as e:
         await asyncio.sleep(e.value)
-        post_message = await client.send_photo(
+        post_message = await client.send_message(
             chat_id=client.db_channel.id,
-            photo="medialeakd.png",
+            text="New content available!",
             disable_notification=True
         )
     except Exception as e:
@@ -36,9 +36,9 @@ async def channel_post(client: Client, message: Message):
     base64_string = await encode(string)
     link = f"https://t.me/{client.username}?start={base64_string}"
 
-    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Buka COy!", url=f'{link}')]])
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'{link}')]])
 
-    await reply_text.edit(f"<b>Here Content Leaked</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview=True)
+    await reply_text.edit(f"<b>Here is your link</b>\n\n{link}", reply_markup=reply_markup, disable_web_page_preview=True)
 
     if not DISABLE_CHANNEL_BUTTON:
         try:
