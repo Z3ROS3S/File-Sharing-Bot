@@ -9,7 +9,7 @@ from pyrogram.enums import ParseMode
 import sys
 from datetime import datetime
 
-from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, PORT
+from config import API_HASH, APP_ID, LOGGER, TG_BOT_TOKEN, TG_BOT_WORKERS, FORCE_SUB_CHANNEL, CHANNEL_ID, CHANNEL_ID_2, PORT
 
 class Bot(Client):
     def __init__(self):
@@ -50,6 +50,16 @@ class Bot(Client):
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel, and Double check the CHANNEL_ID Value, Current Value {CHANNEL_ID}")
+            sys.exit()
+
+        try:
+            db_channel_2 = await self.get_chat(CHANNEL_ID_2)
+            self.db_channel_2 = db_channel_2
+            test_2 = await self.send_message(chat_id=db_channel_2.id, text="Test Message")
+            await test_2.delete()
+        except Exception as e:
+            self.LOGGER(__name__).warning(e)
+            self.LOGGER(__name__).warning(f"Make Sure bot is Admin in DB Channel 2, and Double check the CHANNEL_ID_2 Value, Current Value {CHANNEL_ID_2}")
             sys.exit()
 
         self.set_parse_mode(ParseMode.HTML)
